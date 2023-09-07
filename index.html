@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head><title>UEC 2023</title></head>
+    <style>body {background-color: black;} h1 {font-family: 'Segoe UI'; font-size: 10em; font-weight: bold; color: red;}</style>
+    <body><center><h1 id="data">...</h1><br><img src="https://images.emojiterra.com/google/android-12l/512px/26b0.png" width="250px"></center></body>
+    <script>
+        var countDownDate = new Date("Oct 28, 2023 00:00:00").getTime();
+        
+        var x = setInterval(function() {
+          var now = new Date().getTime();
+          var distance = countDownDate - now;
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          document.getElementById("data").innerHTML = days + "d " + hours + "h "
+          + minutes + "m " + seconds + "s ";
+        
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("data").innerHTML = "D-DAY";
+          }
+        }, 5);
+        </script>
+</html>
