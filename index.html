@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head><title>UEC 2023</title></head>
-    <style>body {background-color: black;} h1 {font-family: 'Segoe UI'; font-size: 10em; font-weight: bold; color: red;}</style>
-    <body><center><h1 id="data">...</h1><br><img src="https://images.emojiterra.com/google/android-12l/512px/26b0.png" width="250px"></center></body>
+    <style>body {background: url('https://media.istockphoto.com/id/1345876096/vector/halloween-night-background-scary-cemetery-and-full-moon-vector-banner.jpg?s=612x612&w=0&k=20&c=F9dCbuHEzjn1u6_ZBGlFmGqR6c-62NluzQttFASClmc='); background-size: 100% 100%; background-attachment: fixed; background-repeat: no-repeat;} span {font-family: 'Segoe UI'; font-size: 6em; font-weight: bold; color: red; text-shadow: 2px 2px black;}</style>
+    <body><center><span style="font-size: 8em; color: rgb(248, 194, 76); text-shadow: 5px 5px black;">UEC 2023</span><br><span id="data">...</span><br><span id="data-jr">...</span><br><br><img src="https://i.kym-cdn.com/photos/images/newsfeed/002/652/421/280.jpg" width="250px"></center></body>
     <script>
-        var countDownDate = new Date("Oct 28, 2023 00:00:00").getTime();
+        var countDownDate = new Date("Oct 28, 2023 08:00:00").getTime();
+        var countDownDateJr = new Date("Nov 4, 2023 08:00:00").getTime();
         
         var x = setInterval(function() {
           var now = new Date().getTime();
@@ -13,12 +14,28 @@
           var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
           var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-          document.getElementById("data").innerHTML = days + "d " + hours + "h "
+          document.getElementById("data").innerHTML = " 高中：" + days + "d " + hours + "h "
           + minutes + "m " + seconds + "s ";
         
           if (distance < 0) {
             clearInterval(x);
-            document.getElementById("data").innerHTML = "D-DAY";
+            document.getElementById("data").innerHTML = "Senior UEC Started";
+          }
+        }, 5);
+
+        var y = setInterval(function() {
+          var now = new Date().getTime();
+          var distance = countDownDateJr - now;
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          document.getElementById("data-jr").innerHTML = " 初中：" + days + "d " + hours + "h "
+          + minutes + "m " + seconds + "s ";
+        
+          if (distance < 0) {
+            clearInterval(y);
+            document.getElementById("data-jr").innerHTML = "Junior UEC Started";
           }
         }, 5);
         </script>
